@@ -81,18 +81,36 @@ a { color: var(--paper); text-decoration: none; }
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
   line-height: 1;
-  padding: 19px 40px;
+  padding: 20px 42px;
   border-radius: var(--radius);
   border: 1px solid transparent;
   cursor: pointer;
-  transition: background-color .3s ease, color .3s ease, border-color .3s ease, opacity .3s ease;
+  transition: background-color .3s ease, color .3s ease, border-color .3s ease,
+              box-shadow .35s ease, transform .2s ease, opacity .3s ease;
   -webkit-tap-highlight-color: transparent;
 }
 .btn span[aria-hidden="true"] { transition: transform .3s ease; }
 .btn:hover span[aria-hidden="true"] { transform: translateX(4px); }
 
-.btn--primary { background: var(--paper); color: var(--ink); }
-.btn--primary:hover { background: #fff; }
+.btn--primary {
+  position: relative;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 6px 22px -10px rgba(0, 0, 0, .7);
+}
+.btn--primary:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 44px -8px rgba(245, 244, 241, .38), 0 0 26px rgba(245, 244, 241, .22);
+}
+.btn--primary:active { transform: translateY(0); }
+
+/* Halo pulsé pour les CTA marketing (hero, équipe) */
+.btn--glow { animation: btnGlow 3.4s ease-in-out infinite; }
+@keyframes btnGlow {
+  0%, 100% { box-shadow: 0 8px 26px -10px rgba(0, 0, 0, .7), 0 0 0 rgba(245, 244, 241, 0); }
+  50%      { box-shadow: 0 12px 40px -8px rgba(245, 244, 241, .30), 0 0 30px rgba(245, 244, 241, .24); }
+}
 
 .btn--secondary { background: transparent; color: var(--paper); border-color: var(--line-strong); }
 .btn--secondary:hover { border-color: var(--paper); background: rgba(245, 244, 241, 0.05); }
@@ -213,7 +231,7 @@ body::after {
   max-width: 620px;
   margin: 0 auto 40px;
 }
-.hero__cta { }
+.hero__cta { padding: 23px 52px; font-size: .9rem; letter-spacing: 0.22em; }
 
 .trustbar {
   list-style: none;
@@ -306,7 +324,32 @@ body::after {
 }
 
 /* ---------- Quiz ---------- */
-.section--quiz { background: var(--ink); scroll-margin-top: 12px; }
+.section--quiz {
+  position: relative;
+  background: var(--ink);
+  scroll-margin-top: 12px;
+  overflow: hidden;
+}
+/* Ambiance immobilier de luxe en fond, très estompée + halo central */
+.section--quiz::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #0a0a0a url('../img/hero.jpg') center / cover no-repeat;
+  filter: grayscale(1) brightness(0.55) contrast(1.05);
+  opacity: 0.14;
+}
+.section--quiz::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(75% 55% at 50% 42%, rgba(224, 205, 175, 0.07) 0%, rgba(10,10,10,0) 60%),
+    linear-gradient(180deg, var(--ink) 0%, rgba(10,10,10,0.72) 30%, rgba(10,10,10,0.72) 70%, var(--ink) 100%);
+}
+.section--quiz > .container { position: relative; z-index: 1; }
 .section--quiz .eyebrow--center { margin-bottom: 22px; }
 .quiz__heading { max-width: 560px; margin: 0 auto 48px; }
 .quiz-card {
@@ -608,7 +651,7 @@ body::after {
 /* ---------- Accessibilité : mouvement réduit ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .quiz__screen, .quiz__bar-fill, .btn, .btn span,
+  .quiz__screen, .quiz__bar-fill, .btn, .btn span, .btn--glow,
   .hero__media, .hero__inner > * { animation: none !important; transition: none !important; }
   .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
