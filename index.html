@@ -132,13 +132,20 @@
             <!-- Q2 -->
             <div class="quiz__screen" data-step="2" data-key="secteur">
               <h2 class="quiz__q">Dans quelle ville se situe votre bien&nbsp;?</h2>
-              <div class="quiz__options">
-                <button type="button" class="quiz__opt" data-value="Montpellier">Montpellier</button>
-                <button type="button" class="quiz__opt" data-value="Sète">Sète</button>
-                <button type="button" class="quiz__opt" data-value="Béziers">Béziers</button>
-                <button type="button" class="quiz__opt" data-value="Narbonne">Narbonne</button>
-                <button type="button" class="quiz__opt" data-value="Autre secteur">Autre secteur</button>
-              </div>
+              <p class="quiz__help">Saisissez le nom de la ville et le code postal.</p>
+              <form id="secteurForm" novalidate>
+                <div class="field">
+                  <label for="ville">Ville <span class="req">*</span></label>
+                  <input type="text" id="ville" name="ville" autocomplete="address-level2" required />
+                  <span class="field__error" data-error-for="ville"></span>
+                </div>
+                <div class="field">
+                  <label for="codePostal">Code postal <span class="req">*</span></label>
+                  <input type="text" id="codePostal" name="codePostal" inputmode="numeric" autocomplete="postal-code" maxlength="5" required />
+                  <span class="field__error" data-error-for="codePostal"></span>
+                </div>
+                <button type="submit" class="btn btn--primary btn--block">Continuer <span aria-hidden="true">→</span></button>
+              </form>
             </div>
 
             <!-- Q3 -->

@@ -32,7 +32,7 @@
   /* -------------------------------------------------------------------------
      ÉTAT
      ------------------------------------------------------------------------- */
-  var answers = { type: "", secteur: "", valeur: "", delai: "" };
+  var answers = { type: "", secteur: "", codePostal: "", valeur: "", delai: "" };
   var meta = { valeurBand: "", delaiSpeed: "" };
   var history = []; // pile des étapes visitées pour le bouton retour
 
@@ -69,9 +69,10 @@
     updateProgress(step);
     manageBackButton();
 
-    // Focus le premier champ de l'écran coordonnées pour le mobile.
-    if (step === 5) {
-      var first = document.getElementById("firstName");
+    // Focus le premier champ des écrans de saisie (secteur / coordonnées).
+    var focusId = step === 2 ? "ville" : (step === 5 ? "firstName" : null);
+    if (focusId) {
+      var first = document.getElementById(focusId);
       if (first) { try { first.focus({ preventScroll: true }); } catch (e) { first.focus(); } }
     }
     // Remonter en haut de la carte quiz pour garder la question visible.
@@ -141,6 +142,36 @@
   });
 
   /* -------------------------------------------------------------------------
+     Q2 — SECTEUR (saisie ville + code postal, pas d'avance auto)
+     ------------------------------------------------------------------------- */
+  var secteurForm = document.getElementById("secteurForm");
+  if (secteurForm) {
+    secteurForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var ville = document.getElementById("ville").value.trim();
+      var cp = document.getElementById("codePostal").value.trim();
+      var ok = true;
+
+      if (!ville) { setError("ville", "Merci d'indiquer la ville."); ok = false; }
+      else setError("ville", "");
+
+      if (!/^\d{5}$/.test(cp)) { setError("codePostal", "Code postal à 5 chiffres."); ok = false; }
+      else setError("codePostal", "");
+
+      if (!ok) return;
+
+      answers.secteur = ville;
+      answers.codePostal = cp;
+
+      if (window.__PRODIGIO_PIXEL_ENABLED__ && window.fbq) {
+        fbq("trackCustom", "QuizStep", { step: 2, key: "secteur", value: ville + " " + cp });
+      }
+
+      goToStep(3);
+    });
+  }
+
+  /* -------------------------------------------------------------------------
      SCORING — 🔥 CHAUD / 🟠 TIÈDE / ⚪️ FROID  (voir brief §4)
      ------------------------------------------------------------------------- */
   function computeLeadScore() {
@@ -206,7 +237,7 @@
   }
 
   // Nettoie l'erreur pendant la saisie.
-  ["firstName", "phone", "email"].forEach(function (id) {
+  ["ville", "codePostal", "firstName", "phone", "email"].forEach(function (id) {
     var el = document.getElementById(id);
     if (el) el.addEventListener("input", function () { setError(id, ""); });
   });
@@ -227,6 +258,7 @@
       // Réponses quiz
       type: answers.type,
       secteur: answers.secteur,
+      codePostal: answers.codePostal,
       valeur: answers.valeur,
       delai: answers.delai,
       // Scoring (tag CRM)
