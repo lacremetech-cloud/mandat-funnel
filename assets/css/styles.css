@@ -457,24 +457,30 @@ a { color: var(--paper); text-decoration: none; }
 .steps__item h3 { font-size: 1.35rem; margin-bottom: 12px; }
 .steps__item p { font-family: var(--serif-text); font-size: 1.1rem; color: var(--paper-dim); }
 
-/* ---------- Fondateur (Victor) ---------- */
-.section--founder { background: var(--ink); }
-.founder {
+/* ---------- L'équipe (Victor & Cyril) ---------- */
+.section--team { background: var(--ink); text-align: center; }
+.section--team .eyebrow--center { margin-bottom: 24px; }
+.team__title { margin-bottom: 64px; }
+.team {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 56px;
-  align-items: center;
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: left;
 }
-.founder__photo {
+.team__member { }
+.team__photo {
   position: relative;
   aspect-ratio: 4 / 5;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
   background: linear-gradient(160deg, #161616, #0d0d0d);
+  margin-bottom: 26px;
 }
-.founder__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.founder__photo-fallback {
+.team__photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+.team__photo-fallback {
   display: none;
   position: absolute; inset: 0;
   align-items: center; justify-content: center;
@@ -484,15 +490,23 @@ a { color: var(--paper); text-decoration: none; }
   text-align: center;
   padding: 20px;
 }
-.founder__photo.is-empty .founder__photo-fallback { display: flex; }
-.founder__text .section__title { margin-bottom: 22px; }
-.founder__lead {
+.team__photo.is-empty .team__photo-fallback { display: flex; }
+.team__role {
+  font-family: var(--sans);
+  font-size: .64rem;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.team__name { font-size: 1.75rem; margin-bottom: 16px; }
+.team__bio {
   font-family: var(--serif-text);
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   color: var(--paper-dim);
-  margin-bottom: 34px;
 }
+.team__cta { text-align: center; margin-top: 64px; }
 
 /* ---------- Footer ---------- */
 .footer {
@@ -523,8 +537,7 @@ a { color: var(--paper); text-decoration: none; }
   .steps { grid-template-columns: 1fr; gap: 48px; }
   .steps__item + .steps__item::before { display: none; }
   .steps__item + .steps__item { border-top: 1px solid var(--line); padding-top: 48px; }
-  .founder { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 36px; }
-  .founder__photo { width: 260px; max-width: 80%; }
+  .team { grid-template-columns: 1fr; gap: 52px; max-width: 340px; }
 }
 
 /* ---------- Accessibilité : mouvement réduit ---------- */

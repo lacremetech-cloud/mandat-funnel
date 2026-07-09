@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Prodigio — Vous vendez ? On vous trouve l'acheteur.</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
   <meta name="description" content="Agence immobilière nouvelle génération sur l'axe Narbonne – Béziers – Sète – Montpellier. Vous vendez votre bien ? On va chercher activement le bon acheteur. Estimation offerte, sans engagement." />
 
   <!-- Open Graph -->
@@ -37,13 +38,13 @@
   <!-- Filet de marque -->
   <div class="brandbar">
     <a href="#top" class="brandbar__logo" data-scroll>PRODIGIO</a>
-    <span class="brandbar__tag">Immobilier · Narbonne › Montpellier</span>
+    <span class="brandbar__tag">Immobilier d'exception</span>
   </div>
 
   <!-- ================= HERO ================= -->
   <header class="hero" id="top">
     <div class="container hero__inner">
-      <p class="eyebrow">Agence immobilière nouvelle génération · Narbonne › Montpellier</p>
+      <p class="eyebrow">Agence immobilière nouvelle génération</p>
       <h1 class="hero__title">Vous vendez votre bien&nbsp;?<br /><em>On vous trouve l'acheteur.</em></h1>
       <p class="hero__subtitle">
         Les agences classiques publient une annonce et attendent. Nous, on va chercher
@@ -167,7 +168,7 @@
             <!-- Écran coordonnées -->
             <div class="quiz__screen quiz__screen--contact" data-step="5" data-key="contact">
               <h2 class="quiz__q">Parfait. Où souhaitez-vous recevoir votre estimation et le profil de votre acheteur&nbsp;?</h2>
-              <p class="quiz__help">Victor vous rappelle sous 24&nbsp;h. Vos informations restent 100&nbsp;% confidentielles.</p>
+              <p class="quiz__help">On vous rappelle sous 24&nbsp;h. Vos informations restent 100&nbsp;% confidentielles.</p>
 
               <form id="contactForm" novalidate>
                 <div class="field">
@@ -202,7 +203,7 @@
               <div class="thanks__check" aria-hidden="true">✓</div>
               <h2 class="quiz__q">Merci <span id="thanksName">!</span></h2>
               <p class="thanks__text">
-                Votre demande est bien reçue. Victor vous rappelle sous 24&nbsp;h pour vous présenter
+                Votre demande est bien reçue. On vous rappelle sous 24&nbsp;h pour vous présenter
                 l'estimation de votre bien et lancer la recherche de votre acheteur&nbsp;— en toute discrétion.
               </p>
               <a href="#" class="btn btn--secondary" id="calendlyBtn" hidden>Réserver directement mon rendez-vous</a>
@@ -228,7 +229,7 @@
           </li>
           <li class="steps__item">
             <span class="steps__num">02</span>
-            <h3>Victor vous rappelle</h3>
+            <h3>On vous rappelle</h3>
             <p>Un échange simple, sous 24&nbsp;h, pour tout comprendre.</p>
           </li>
           <li class="steps__item">
@@ -240,23 +241,52 @@
       </div>
     </section>
 
-    <!-- ================= VICTOR ================= -->
-    <section class="section section--founder">
-      <div class="container founder">
-        <div class="founder__photo">
-          <!-- Ajoutez la photo dans assets/img/victor.jpg (voir README). -->
-          <img src="assets/img/victor.jpg" alt="Victor Razeyre, fondateur de Prodigio"
-               onerror="this.style.display='none';this.parentNode.classList.add('is-empty');" />
-          <span class="founder__photo-fallback" aria-hidden="true">Victor Razeyre</span>
+    <!-- ================= L'ÉQUIPE (Victor & Cyril) ================= -->
+    <section class="section section--team">
+      <div class="container">
+        <p class="eyebrow eyebrow--center">Vos interlocuteurs</p>
+        <h2 class="section__title center team__title">À vos côtés, une équipe.<br /><em>À votre service, tout un système.</em></h2>
+
+        <div class="team">
+          <!-- Victor -->
+          <article class="team__member">
+            <div class="team__photo">
+              <!-- Photo : assets/img/victor.jpg (portrait ~4:5, fond sombre). -->
+              <img src="assets/img/victor.jpg" alt="Victor Razeyre, co-fondateur de Prodigio"
+                   onerror="this.style.display='none';this.parentNode.classList.add('is-empty');" />
+              <span class="team__photo-fallback" aria-hidden="true">Victor Razeyre</span>
+            </div>
+            <p class="team__role">Co-fondateur de Prodigio</p>
+            <h3 class="team__name">Victor Razeyre</h3>
+            <p class="team__bio">
+              Entrepreneur depuis dix ans, j'ai aidé plus de 80 entreprises de tous horizons
+              à booster leur acquisition. J'ai développé un système sur-mesure&nbsp;: identifier
+              et atteindre les acquéreurs qualifiés, pour réduire les délais de vente tout en
+              valorisant pleinement chaque bien.
+            </p>
+          </article>
+
+          <!-- Cyril -->
+          <article class="team__member">
+            <div class="team__photo">
+              <!-- Photo : assets/img/cyril.jpg (portrait ~4:5, fond sombre). -->
+              <img src="assets/img/cyril.jpg" alt="Cyril G, co-fondateur de Prodigio"
+                   onerror="this.style.display='none';this.parentNode.classList.add('is-empty');" />
+              <span class="team__photo-fallback" aria-hidden="true">Cyril G</span>
+            </div>
+            <p class="team__role">Co-fondateur de Prodigio</p>
+            <h3 class="team__name">Cyril G</h3>
+            <!-- TODO : remplacer par la vraie bio de Cyril (non présente sur prodigio.fr). -->
+            <p class="team__bio">
+              Aux côtés de Victor, j'accompagne chaque propriétaire de vive voix&nbsp;: comprendre
+              votre projet, estimer votre bien au juste prix et mener la vente jusqu'à la
+              signature, avec méthode et discrétion.
+            </p>
+          </article>
         </div>
-        <div class="founder__text">
-          <p class="eyebrow">Le fondateur</p>
-          <h2 class="section__title">Victor Razeyre</h2>
-          <p class="founder__lead">
-            Un accompagnement professionnel et discret, à vos côtés du premier appel
-            jusqu'à la signature.
-          </p>
-          <a href="#quiz" class="btn btn--secondary" data-scroll>Trouver mon acheteur <span aria-hidden="true">→</span></a>
+
+        <div class="team__cta">
+          <a href="#quiz" class="btn btn--primary" data-scroll>Trouver mon acheteur <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
