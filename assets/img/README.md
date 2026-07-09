@@ -9,7 +9,7 @@ Sans ces fichiers, un fallback texte (nom) s'affiche automatiquement.
 
 - `victor.jpg` — portrait de **Victor Razeyre** (cheveux châtains, costume) —
   c'est la 1ʳᵉ photo envoyée.
-- `cyril.jpg` — portrait de **Cyril G** (cheveux bouclés, costume) —
+- `cyril.png` — portrait de **Cyril G** (cheveux bouclés, costume) —
   c'est la photo « photo de cyril ».
 
 ## Marque
