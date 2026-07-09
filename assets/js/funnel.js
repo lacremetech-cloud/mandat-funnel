@@ -360,6 +360,45 @@
   });
 
   /* -------------------------------------------------------------------------
+     APPARITION AU SCROLL (reveal) — amélioration progressive
+     ------------------------------------------------------------------------- */
+  (function initReveal() {
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce || !("IntersectionObserver" in window)) return; // sinon : tout reste visible
+
+    // Sélecteurs révélés ; les groupes (2e valeur) sont décalés en cascade.
+    var groups = [
+      [".section--diff .section__title, .section--diff .section__lead", false],
+      [".proof__intro", false],
+      [".proof__stat", true],
+      [".section--quiz .eyebrow, .quiz__heading, .quiz-card", false],
+      [".section--steps .eyebrow, .section--steps .section__title", false],
+      [".steps__item", true],
+      [".section--team .eyebrow, .team__title", false],
+      [".team__member", true],
+      [".team__cta", false]
+    ];
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+
+    groups.forEach(function (g) {
+      var nodes = document.querySelectorAll(g[0]);
+      nodes.forEach(function (el, i) {
+        el.classList.add("reveal");
+        if (g[1]) el.style.transitionDelay = (i % 4) * 0.1 + "s"; // cascade
+        observer.observe(el);
+      });
+    });
+  })();
+
+  /* -------------------------------------------------------------------------
      INIT
      ------------------------------------------------------------------------- */
   updateProgress(1);

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Prodigio — Vous vendez ? On vous trouve l'acheteur.</title>
+  <title>Prodigio · Vous vendez ? On vous trouve l'acheteur.</title>
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
   <meta name="description" content="Agence immobilière nouvelle génération. Vous vendez votre bien ? On va chercher activement le bon acheteur. Estimation offerte, sans engagement." />
 
@@ -37,18 +37,22 @@
 <body>
   <!-- Filet de marque -->
   <div class="brandbar">
-    <a href="#top" class="brandbar__logo" data-scroll>PRODIGIO</a>
-    <span class="brandbar__tag">Immobilier d'exception</span>
+    <a href="#top" class="brandbar__logo" data-scroll aria-label="Prodigio · Immobilier d'exception">
+      <span class="brandbar__word">PRODIGIO</span>
+      <span class="brandbar__sub">Immobilier d'exception</span>
+    </a>
   </div>
 
   <!-- ================= HERO ================= -->
   <header class="hero" id="top">
+    <div class="hero__media" aria-hidden="true"></div>
+    <div class="hero__scrim" aria-hidden="true"></div>
     <div class="container hero__inner">
       <p class="eyebrow">Agence immobilière nouvelle génération</p>
       <h1 class="hero__title">Vous vendez votre bien&nbsp;?<br /><em>On vous trouve l'acheteur.</em></h1>
       <p class="hero__subtitle">
         Les agences classiques publient une annonce et attendent. Nous, on va chercher
-        activement le bon acheteur pour votre bien&nbsp;— plus vite, et sans effort de votre part.
+        activement le bon acheteur pour votre bien. Plus vite, et sans effort de votre part.
       </p>
       <a href="#quiz" class="btn btn--primary hero__cta" data-scroll>Trouver mon acheteur <span aria-hidden="true">→</span></a>
 
@@ -78,7 +82,7 @@
     <!-- ================= PREUVE ================= -->
     <section class="section section--proof">
       <div class="container">
-        <p class="proof__intro">Exemple chiffré — un chalet à 1,6&nbsp;M€, en une semaine</p>
+        <p class="proof__intro">Exemple chiffré : un chalet à 1,6&nbsp;M€, en une semaine</p>
         <div class="proof__stats">
           <div class="proof__stat">
             <span class="proof__num">128</span>
@@ -99,6 +103,8 @@
     <!-- ================= QUIZ ================= -->
     <section class="section section--quiz" id="quiz">
       <div class="container narrow">
+        <p class="eyebrow eyebrow--center">Votre estimation offerte</p>
+        <h2 class="section__title center quiz__heading">Donnez-nous les détails pour que nous trouvions votre acheteur idéal.</h2>
         <div class="quiz-card" role="form" aria-label="Trouvez votre acheteur en 4 questions">
 
           <!-- Progression -->
@@ -211,7 +217,7 @@
               <h2 class="quiz__q">Merci <span id="thanksName">!</span></h2>
               <p class="thanks__text">
                 Votre demande est bien reçue. On vous rappelle sous 24&nbsp;h pour vous présenter
-                l'estimation de votre bien et lancer la recherche de votre acheteur&nbsp;— en toute discrétion.
+                l'estimation de votre bien et lancer la recherche de votre acheteur, en toute discrétion.
               </p>
               <a href="#" class="btn btn--secondary" id="calendlyBtn" hidden>Réserver directement mon rendez-vous</a>
             </div>

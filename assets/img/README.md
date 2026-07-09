@@ -12,6 +12,14 @@ Sans ces fichiers, un fallback texte (nom) s'affiche automatiquement.
 - `cyril.png` — portrait de **Cyril G** (cheveux bouclés, costume) —
   c'est la photo « photo de cyril ».
 
+## Fond du hero
+
+- `hero.jpg` — visuel d'ambiance **immobilier de luxe en noir & blanc**, affiché
+  en fond du hero à faible opacité (~42 %) sous un voile sombre, avec un léger
+  zoom cinématique. Version actuelle générée par IA (villa méditerranéenne),
+  utilisée comme texture d'ambiance — remplaçable par une vraie photo de bien
+  (idéalement libre de droits, ~1920 px de large, N&B ou désaturée).
+
 ## Marque
 
 - `favicon.svg` — le « P » Prodigio (déjà présent, généré au format vectoriel).

@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Prodigio">
-  <rect width="100" height="100" rx="20" fill="#0a0a0a"/>
-  <path fill="#f5f4f1" fill-rule="evenodd" d="M30 20 h26 a24 24 0 0 1 0 48 h-11 v14 h-15 z M45 32 h11 a12 12 0 0 1 0 24 h-11 z"/>
+  <rect width="100" height="100" rx="16" fill="#0a0a0a"/>
+  <text x="50" y="52" text-anchor="middle" dominant-baseline="central"
+        font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+        font-size="74" font-weight="700" fill="#f5f4f1">P</text>
 </svg>
