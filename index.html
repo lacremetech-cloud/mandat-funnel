@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Prodigio · Vous vendez ? On vous trouve l'acheteur.</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <meta name="description" content="Agence immobilière nouvelle génération. Vous vendez votre bien ? On va chercher activement le bon acheteur. Estimation offerte, sans engagement." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vous vendez votre bien ? On vous trouve l'acheteur." />
+  <meta property="og:description" content="Les agences classiques attendent l'acheteur. Nous, on va le chercher. Estimation offerte · Sans engagement · 100 % confidentiel." />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Fonts — même système typographique que prodigio.fr (self-hostez en prod). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:wght@400;500;600;700&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- ==========================================================
+       META PIXEL — remplacez YOUR_PIXEL_ID (voir README §Tracking)
+       ========================================================== -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    // fbq('init', 'YOUR_PIXEL_ID');   // ← à activer en prod
+    // fbq('track', 'PageView');
+    window.__PRODIGIO_PIXEL_ENABLED__ = false;
+  </script>
+</head>
+<body>
+  <!-- Filet de marque -->
+  <div class="brandbar">
+    <a href="#top" class="brandbar__logo" data-scroll aria-label="Prodigio · Immobilier d'exception">
+      <span class="brandbar__word">PRODIGIO</span>
+      <span class="brandbar__sub">Immobilier d'exception</span>
+    </a>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <header class="hero" id="top">
+    <div class="hero__media" aria-hidden="true"></div>
+    <div class="hero__scrim" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <p class="eyebrow">Agence immobilière nouvelle génération</p>
+      <h1 class="hero__title">Vous vendez votre bien&nbsp;?<br /><em>On vous trouve l'acheteur.</em></h1>
+      <p class="hero__subtitle">
+        Les agences classiques publient une annonce et attendent. Nous, on va chercher
+        activement le bon acheteur pour votre bien. Plus vite, et sans effort de votre part.
+      </p>
+      <a href="#quiz" class="btn btn--primary btn--glow hero__cta" data-scroll>Trouver mon acheteur <span aria-hidden="true">→</span></a>
+
+      <ul class="trustbar" aria-label="Nos garanties">
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8"/><rect x="2.5" y="7.5" width="19" height="4.5" rx="1"/><path d="M12 7.5V21"/><path d="M12 7.5H7.5a2.5 2.5 0 1 1 0-5C11 2.5 12 7.5 12 7.5Z"/><path d="M12 7.5h4.5a2.5 2.5 0 1 0 0-5C13 2.5 12 7.5 12 7.5Z"/></svg>
+          Estimation offerte
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          Sans engagement
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          100&nbsp;% confidentiel
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5Z"/><path d="m9 12 2 2 4-4"/></svg>
+          Agence carte T
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= DIFFÉRENCIATION ================= -->
+    <section class="section section--diff">
+      <div class="container narrow">
+        <p class="eyebrow eyebrow--center">La différence</p>
+        <h2 class="section__title">Une agence immobilière,<br />mais pas comme les autres.</h2>
+        <p class="section__lead">
+          Là où une agence traditionnelle attend qu'un acheteur passe, nous allons le chercher
+          activement. Résultat&nbsp;: vous vendez plus vite, au bon prix, sans que votre bien
+          traîne des mois en vitrine.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= PREUVE ================= -->
+    <section class="section section--proof">
+      <div class="container">
+        <p class="proof__intro">Exemple chiffré : un chalet à 1,6&nbsp;M€, en une semaine</p>
+        <div class="proof__stats">
+          <div class="proof__stat">
+            <span class="proof__num" data-count="128">128</span>
+            <span class="proof__label">prospects ciblés</span>
+          </div>
+          <div class="proof__stat">
+            <span class="proof__num" data-count="12">12</span>
+            <span class="proof__label">visites planifiées</span>
+          </div>
+          <div class="proof__stat">
+            <span class="proof__num" data-count="1">1</span>
+            <span class="proof__label">vente en 7 jours</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= QUIZ ================= -->
+    <section class="section section--quiz" id="quiz">
+      <div class="container narrow">
+        <p class="eyebrow eyebrow--center">Offert · le profil de votre acheteur idéal</p>
+        <h2 class="section__title center quiz__heading">Donnez-nous les détails pour que nous trouvions votre acheteur idéal.</h2>
+        <div class="quiz-card" role="form" aria-label="Trouvez votre acheteur en 4 questions">
+
+          <!-- Progression -->
+          <div class="quiz__progress" id="quizProgress">
+            <div class="quiz__progress-head">
+              <button type="button" class="quiz__back" id="quizBack" aria-label="Question précédente" hidden>
+                <span aria-hidden="true">←</span> Retour
+              </button>
+              <span class="quiz__step-label" id="quizStepLabel">Étape 1 sur 4</span>
+            </div>
+            <div class="quiz__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20">
+              <div class="quiz__bar-fill" id="quizBarFill" style="width:20%"></div>
+            </div>
+          </div>
+
+          <!-- Écrans -->
+          <div class="quiz__screens" id="quizScreens">
+
+            <!-- Q1 -->
+            <div class="quiz__screen is-active" data-step="1" data-key="type">
+              <h2 class="quiz__q">Quel bien souhaitez-vous vendre&nbsp;?</h2>
+              <div class="quiz__options">
+                <button type="button" class="quiz__opt" data-value="Maison">Maison</button>
+                <button type="button" class="quiz__opt" data-value="Appartement">Appartement</button>
+                <button type="button" class="quiz__opt" data-value="Terrain">Terrain</button>
+                <button type="button" class="quiz__opt" data-value="Immeuble">Immeuble</button>
+                <button type="button" class="quiz__opt" data-value="Autre">Autre</button>
+              </div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="quiz__screen" data-step="2" data-key="secteur">
+              <h2 class="quiz__q">Dans quelle ville se situe votre bien&nbsp;?</h2>
+              <p class="quiz__help">Saisissez le nom de la ville et le code postal.</p>
+              <form id="secteurForm" novalidate>
+                <div class="field">
+                  <label for="ville">Ville <span class="req">*</span></label>
+                  <input type="text" id="ville" name="ville" autocomplete="address-level2" required />
+                  <span class="field__error" data-error-for="ville"></span>
+                </div>
+                <div class="field">
+                  <label for="codePostal">Code postal <span class="req">*</span></label>
+                  <input type="text" id="codePostal" name="codePostal" inputmode="numeric" autocomplete="postal-code" maxlength="5" required />
+                  <span class="field__error" data-error-for="codePostal"></span>
+                </div>
+                <button type="submit" class="btn btn--primary btn--block">Continuer <span aria-hidden="true">→</span></button>
+              </form>
+            </div>
+
+            <!-- Q3 -->
+            <div class="quiz__screen" data-step="3" data-key="valeur">
+              <h2 class="quiz__q">Quelle est la valeur estimée de votre bien&nbsp;?</h2>
+              <p class="quiz__help">Une fourchette approximative suffit.</p>
+              <div class="quiz__options">
+                <button type="button" class="quiz__opt" data-value="Moins de 300 k€" data-band="low">Moins de 300&nbsp;k€</button>
+                <button type="button" class="quiz__opt" data-value="300 k€ – 600 k€" data-band="high">300&nbsp;k€ – 600&nbsp;k€</button>
+                <button type="button" class="quiz__opt" data-value="600 k€ – 1 M€" data-band="high">600&nbsp;k€ – 1&nbsp;M€</button>
+                <button type="button" class="quiz__opt" data-value="Plus de 1 M€" data-band="high">Plus de 1&nbsp;M€</button>
+                <button type="button" class="quiz__opt" data-value="Je ne sais pas" data-band="unknown">Je ne sais pas</button>
+              </div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="quiz__screen" data-step="4" data-key="delai">
+              <h2 class="quiz__q">Quand souhaitez-vous vendre&nbsp;?</h2>
+              <div class="quiz__options">
+                <button type="button" class="quiz__opt" data-value="Dès que possible" data-speed="fast">Dès que possible</button>
+                <button type="button" class="quiz__opt" data-value="Dans les 6 mois" data-speed="fast">Dans les 6 mois</button>
+                <button type="button" class="quiz__opt" data-value="D'ici 1 an" data-speed="mid">D'ici 1 an</button>
+                <button type="button" class="quiz__opt" data-value="Je me renseigne" data-speed="slow">Je me renseigne</button>
+              </div>
+            </div>
+
+            <!-- Écran coordonnées -->
+            <div class="quiz__screen quiz__screen--contact" data-step="5" data-key="contact">
+              <h2 class="quiz__q">Parfait. Où souhaitez-vous recevoir votre estimation et le profil de votre acheteur&nbsp;?</h2>
+              <p class="quiz__help">On vous rappelle sous 24&nbsp;h. Vos informations restent 100&nbsp;% confidentielles.</p>
+
+              <form id="contactForm" novalidate>
+                <div class="field">
+                  <label for="firstName">Prénom <span class="req">*</span></label>
+                  <input type="text" id="firstName" name="firstName" autocomplete="given-name" required />
+                  <span class="field__error" data-error-for="firstName"></span>
+                </div>
+                <div class="field">
+                  <label for="phone">Téléphone <span class="req">*</span></label>
+                  <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required />
+                  <span class="field__error" data-error-for="phone"></span>
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" autocomplete="email" inputmode="email" />
+                  <span class="field__error" data-error-for="email"></span>
+                </div>
+
+                <button type="submit" class="btn btn--primary btn--block" id="submitBtn">
+                  Trouver mon acheteur <span aria-hidden="true">→</span>
+                </button>
+
+                <p class="quiz__legal">
+                  Vos données servent uniquement à traiter votre demande. Aucune diffusion
+                  de votre bien sans votre accord écrit.
+                </p>
+              </form>
+            </div>
+
+            <!-- Page merci -->
+            <div class="quiz__screen quiz__screen--thanks" data-step="6" data-key="thanks">
+              <div class="thanks__check" aria-hidden="true">✓</div>
+              <h2 class="quiz__q">Merci <span id="thanksName">!</span></h2>
+              <p class="thanks__text">
+                Votre demande est bien reçue. On vous rappelle sous 24&nbsp;h pour vous présenter
+                l'estimation de votre bien et lancer la recherche de votre acheteur, en toute discrétion.
+              </p>
+              <a href="#" class="btn btn--secondary" id="calendlyBtn" hidden>Réserver directement mon rendez-vous</a>
+            </div>
+
+          </div><!-- /quiz__screens -->
+
+          <p class="quiz__reassurance"><span aria-hidden="true">🔒</span> 100&nbsp;% confidentiel</p>
+        </div><!-- /quiz-card -->
+      </div>
+    </section>
+
+    <!-- ================= COMMENT ÇA MARCHE ================= -->
+    <section class="section section--steps">
+      <div class="container">
+        <p class="eyebrow eyebrow--center">Le déroulé</p>
+        <h2 class="section__title center">Comment ça marche</h2>
+        <ol class="steps">
+          <li class="steps__item">
+            <span class="steps__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2Z"/><path d="M9 12h6M9 16h6"/></svg>
+            </span>
+            <span class="steps__num">01</span>
+            <h3>Vous décrivez votre bien</h3>
+            <p>2 minutes, en ligne.</p>
+          </li>
+          <li class="steps__item">
+            <span class="steps__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h2.3a1 1 0 0 1 1 .8l1 4a1 1 0 0 1-.3 1L8.5 10.5a12 12 0 0 0 5 5l1.7-1.5a1 1 0 0 1 1-.3l4 1a1 1 0 0 1 .8 1V19a2 2 0 0 1-2 2A16 16 0 0 1 4 5Z"/></svg>
+            </span>
+            <span class="steps__num">02</span>
+            <h3>On vous rappelle</h3>
+            <p>Un échange simple, sous 24&nbsp;h, pour tout comprendre.</p>
+          </li>
+          <li class="steps__item">
+            <span class="steps__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="m10.8 12.2 8.2-8.2M15 6l3 3M17 4l3 3"/></svg>
+            </span>
+            <span class="steps__num">03</span>
+            <h3>On trouve votre acheteur</h3>
+            <p>On s'occupe de tout jusqu'à la vente.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= L'ÉQUIPE (Victor & Cyril) ================= -->
+    <section class="section section--team">
+      <div class="container">
+        <p class="eyebrow eyebrow--center">Vos interlocuteurs</p>
+        <h2 class="section__title center team__title">À vos côtés, une équipe.<br /><em>À votre service, tout un système.</em></h2>
+
+        <div class="team">
+          <!-- Victor -->
+          <article class="team__member">
+            <div class="team__photo">
+              <!-- Photo : assets/img/victor.jpg (portrait ~4:5, fond sombre). -->
+              <img src="assets/img/victor.jpg" alt="Victor Razeyre, co-fondateur de Prodigio"
+                   onerror="this.style.display='none';this.parentNode.classList.add('is-empty');" />
+              <span class="team__photo-fallback" aria-hidden="true">Victor Razeyre</span>
+            </div>
+            <p class="team__role">Co-fondateur de Prodigio</p>
+            <h3 class="team__name">Victor Razeyre</h3>
+            <p class="team__bio">
+              Entrepreneur depuis dix ans, j'ai aidé plus de 80 entreprises de tous horizons
+              à booster leur acquisition. J'ai développé un système sur-mesure&nbsp;: identifier
+              et atteindre les acquéreurs qualifiés, pour réduire les délais de vente tout en
+              valorisant pleinement chaque bien.
+            </p>
+          </article>
+
+          <!-- Cyril -->
+          <article class="team__member">
+            <div class="team__photo">
+              <!-- Photo : assets/img/cyril.png (portrait ~4:5, fond sombre). -->
+              <img src="assets/img/cyril.png" alt="Cyril G, co-fondateur de Prodigio"
+                   onerror="this.style.display='none';this.parentNode.classList.add('is-empty');" />
+              <span class="team__photo-fallback" aria-hidden="true">Cyril G</span>
+            </div>
+            <p class="team__role">Co-fondateur de Prodigio</p>
+            <h3 class="team__name">Cyril G</h3>
+            <p class="team__bio">
+              Fort de plus de 23 ans d'expérience dans l'immobilier en Occitanie, j'accompagne
+              chaque propriétaire dans la recherche, la négociation et la valorisation de son
+              bien. Un suivi professionnel et discret, jusqu'à la signature&nbsp;: vendre au
+              meilleur prix, en toute confiance.
+            </p>
+          </article>
+        </div>
+
+        <div class="team__cta">
+          <a href="#quiz" class="btn btn--primary btn--glow" data-scroll>Trouver mon acheteur <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__brand">PRODIGIO</p>
+      <p class="footer__line">Agence immobilière</p>
+      <p class="footer__line">Titulaire de la carte T</p>
+      <p class="footer__line footer__legal">Conforme loi Hoguet &amp; RGPD.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/funnel.js"></script>
+</body>
+</html>
