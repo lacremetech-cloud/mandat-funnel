@@ -14,12 +14,12 @@
      ------------------------------------------------------------------------- */
   var CONFIG = {
     // Endpoint qui crée le contact dans le CRM, applique le tag de scoring,
-    // notifie Cyril et déclenche la séquence anti-no-show + la CAPI Meta.
+    // notifie Victor et déclenche la séquence anti-no-show + la CAPI Meta.
     // Sur Systeme.io : l'action de soumission du formulaire natif remplace
     // cet appel. En hébergement custom, pointez vers votre webhook (Make/Zapier/n8n).
     crmWebhookUrl: "", // ex : "https://hook.eu1.make.com/xxxxxxxx"
 
-    // Lien Calendly de Cyril (bouton secondaire sur la page merci).
+    // Lien Calendly de Victor (bouton secondaire sur la page merci).
     // Laisser vide pour masquer le bouton.
     calendlyUrl: "", // ex : "https://calendly.com/cyril-prodigio/rdv-vendeur"
 

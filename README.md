@@ -1,7 +1,7 @@
 # Prodigio — Funnel de génération de mandats vendeurs
 
 Landing page + quiz 4 étapes pour transformer un propriétaire vendeur en
-rendez-vous qualifié avec Cyril. Positionnement : **agence immobilière nouvelle
+rendez-vous qualifié avec Victor. Positionnement : **agence immobilière nouvelle
 génération** sur l'axe **Narbonne – Béziers – Sète – Montpellier**.
 
 > Promesse centrale : **« Vous vendez ? On vous trouve l'acheteur. »**
@@ -12,8 +12,8 @@ Page unique, **mobile-first**, sans build ni dépendance :
 
 ```
 index.html                → landing complète (hero + différenciation + preuve
-                             + quiz intégré + « comment ça marche » + Cyril + footer)
-assets/css/styles.css     → design system (blanc cassé · encre · vert sapin)
+                             + quiz intégré + « comment ça marche » + Victor + footer)
+assets/css/styles.css     → design system (monochrome luxe, aligné sur prodigio.fr)
 assets/js/funnel.js       → logique quiz, scoring, validation, soumission, tracking
 ```
 
@@ -26,7 +26,7 @@ puis écran coordonnées et page merci — le tout sans rechargement.
 ```
 Hero → Quiz (Q1 type · Q2 secteur · Q3 valeur · Q4 délai)
      → Coordonnées (prénom* · téléphone* · email)
-     → Page merci (« Cyril vous rappelle sous 24 h »)
+     → Page merci (« Victor vous rappelle sous 24 h »)
 ```
 
 Personne n'est jamais disqualifié visiblement : **tout le monde arrive à la page
@@ -53,8 +53,8 @@ Tout se règle en tête de `assets/js/funnel.js`, objet `CONFIG` :
 ```js
 var CONFIG = {
   crmWebhookUrl:  "",  // webhook Make/Zapier/n8n : crée le contact, applique le tag,
-                       // notifie Cyril, déclenche l'anti-no-show + la CAPI Meta.
-  calendlyUrl:    "",  // agenda Cyril → bouton secondaire sur la page merci (optionnel)
+                       // notifie Victor, déclenche l'anti-no-show + la CAPI Meta.
+  calendlyUrl:    "",  // agenda Victor → bouton secondaire sur la page merci (optionnel)
   thankYouRedirect: "" // redirige vers une page merci dédiée au lieu de l'écran inline
 };
 ```
@@ -82,18 +82,19 @@ La **Conversions API** doit être déclenchée **côté serveur** depuis le webh
 ### Systeme.io (cible du brief)
 Reconstituez la landing avec l'éditeur, ou intégrez ce HTML/CSS/JS dans un bloc
 « code personnalisé ». Points d'attention :
-- **Webfont hébergé** (pas de police système en prod) — Fraunces + Inter sont
-  chargées ici via Google Fonts ; pour de meilleures perfs, self-hostez-les.
+- **Webfont hébergé** (pas de police système en prod) — Playfair Display,
+  Cormorant Garamond et Jost sont chargées via Google Fonts ; self-hostez-les
+  en prod pour de meilleures perfs (mêmes familles que prodigio.fr).
 - Branchez le formulaire natif Systeme.io au CRM (création contact + tag) ou
   pointez `crmWebhookUrl` vers votre automatisation.
-- Ajoutez le lien Calendly de Cyril sur la page merci et pour l'appel.
+- Ajoutez le lien Calendly de Victor sur la page merci et pour l'appel.
 
 ### Hébergement statique (Netlify, Vercel, GitHub Pages…)
 Déployez le dossier tel quel — aucun build requis.
 
 ## À personnaliser avant mise en ligne
 
-- [ ] Photo de Cyril → `assets/img/cyril.jpg` (remplacer le placeholder `.cyril__photo`)
+- [ ] Photo de Victor → `assets/img/victor.jpg` (remplacer le bloc `.founder__photo`)
 - [ ] `CONFIG.crmWebhookUrl`, `CONFIG.calendlyUrl`
 - [ ] Meta Pixel ID + activation `__PRODIGIO_PIXEL_ENABLED__`
 - [ ] Self-hoster les webfonts
