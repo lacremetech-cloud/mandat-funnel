@@ -399,6 +399,39 @@
   })();
 
   /* -------------------------------------------------------------------------
+     COMPTEURS ANIMÉS (section preuve) — amélioration progressive
+     ------------------------------------------------------------------------- */
+  (function initCounters() {
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var nums = document.querySelectorAll("[data-count]");
+    if (!nums.length || reduce || !("IntersectionObserver" in window)) return; // valeurs finales déjà dans le HTML
+
+    nums.forEach(function (el) { el.textContent = "0"; });
+
+    function animate(el) {
+      var target = parseInt(el.getAttribute("data-count"), 10) || 0;
+      var duration = 1500, start = null;
+      function tick(ts) {
+        if (start === null) start = ts;
+        var p = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+        el.textContent = Math.round(eased * target).toString();
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = target.toString();
+      }
+      requestAnimationFrame(tick);
+    }
+
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { animate(entry.target); obs.unobserve(entry.target); }
+      });
+    }, { threshold: 0.5 });
+
+    nums.forEach(function (el) { obs.observe(el); });
+  })();
+
+  /* -------------------------------------------------------------------------
      INIT
      ------------------------------------------------------------------------- */
   updateProgress(1);

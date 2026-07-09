@@ -18,6 +18,9 @@
   --line: rgba(245, 244, 241, 0.14);   /* filet fin */
   --line-strong: rgba(245, 244, 241, 0.28);
   --danger: #e0736b;
+  --gold: #cCA25c;
+  --gold-2: #e4c98a;
+  --gold-soft: rgba(203, 162, 92, 0.14);
   --radius: 2px;
   --serif-display: "Playfair Display", Georgia, "Times New Roman", serif;
   --serif-text: "Cormorant Garamond", Georgia, serif;
@@ -66,6 +69,14 @@ a { color: var(--paper); text-decoration: none; }
   font-weight: 400;
   color: var(--muted);
   margin: 0 0 26px;
+}
+.eyebrow::before {
+  content: "✦";
+  color: var(--gold);
+  margin-right: 0.85em;
+  font-size: 0.9em;
+  letter-spacing: 0;
+  vertical-align: 0.02em;
 }
 .eyebrow--center { text-align: center; }
 
@@ -221,7 +232,14 @@ body::after {
   letter-spacing: -0.005em;
   margin-bottom: 30px;
 }
-.hero__title em { display: inline-block; color: var(--paper); }
+.hero__title em {
+  display: inline-block;
+  color: var(--paper);
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 10px;
+}
 .hero__subtitle {
   font-family: var(--serif-text);
   font-weight: 400;
@@ -239,23 +257,30 @@ body::after {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 14px 0;
+  gap: 14px 26px;
   margin: 46px 0 0;
   padding: 0;
   font-family: var(--sans);
   font-size: .64rem;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: var(--tracking-wide);
+  letter-spacing: 0.16em;
   color: var(--paper-dim);
 }
-.trustbar li { padding: 0 22px; position: relative; white-space: nowrap; }
-.trustbar li + li::before {
-  content: "";
-  position: absolute; left: 0; top: 50%;
-  width: 1px; height: 12px;
-  background: var(--line-strong);
-  transform: translateY(-50%);
+.trustbar li {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+}
+.trustbar svg {
+  width: 15px; height: 15px;
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
 }
 
 /* ---------- Sections génériques ---------- */
@@ -273,7 +298,11 @@ body::after {
   color: var(--paper-dim);
 }
 
-.section--diff { text-align: center; border-bottom: 1px solid var(--line); }
+.section--diff {
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  background: radial-gradient(58% 48% at 50% 0%, var(--gold-soft), transparent 62%);
+}
 .section--diff .section__lead { max-width: 580px; margin: 0 auto; }
 
 /* ---------- Preuve ---------- */
@@ -314,6 +343,10 @@ body::after {
   font-size: clamp(3.2rem, 10vw, 5rem);
   line-height: 1;
   margin-bottom: 18px;
+  background: linear-gradient(170deg, var(--gold-2) 0%, var(--gold) 55%, #a97f3f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 .proof__label {
   font-family: var(--sans);
@@ -555,18 +588,43 @@ body::after {
   width: 1px; height: calc(100% - 12px);
   background: var(--line);
 }
+.steps__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: radial-gradient(120% 120% at 50% 0%, var(--gold-soft), transparent 70%);
+}
+.steps__icon svg {
+  width: 26px; height: 26px;
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .steps__num {
   display: block;
   font-family: var(--serif-display);
-  font-size: 1.6rem;
-  color: var(--muted);
-  margin-bottom: 22px;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-bottom: 14px;
 }
 .steps__item h3 { font-size: 1.35rem; margin-bottom: 12px; }
 .steps__item p { font-family: var(--serif-text); font-size: 1.1rem; color: var(--paper-dim); }
 
 /* ---------- L'équipe (Victor & Cyril) ---------- */
-.section--team { background: var(--ink); text-align: center; }
+.section--team {
+  background:
+    radial-gradient(52% 42% at 50% 2%, var(--gold-soft), transparent 60%),
+    var(--ink);
+  text-align: center;
+}
 .section--team .eyebrow--center { margin-bottom: 24px; }
 .team__title { margin-bottom: 64px; }
 .team {
